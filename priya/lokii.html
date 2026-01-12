@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style> 
+:root{
+  --main-orange: #FF6B61; 
+  --dark-blue: #0b1c5d; 
+  --light-bg: rgba(255,255,255,0.9);
+  --gradient1: linear-gradient(135deg, #FF6B61 0%, #FF9A8B 100%);
+  --gradient2: linear-gradient(135deg, #FF9A8B 0%, #FFD6A5 100%);
+} 
+*{ 
+  margin:0;
+  padding:0; 
+  box-sizing:border-box; 
+  font-family: 'Segoe UI', sans-serif;
+}
+html{ 
+  scroll-behavior:smooth;
+}
+body{ 
+  background: var(--main-orange);
+  color: var(--dark-blue); 
+  overflow-x: hidden; 
+} 
+
+/* ---------- HEADER ---------- */
+header{
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center;
+  padding:15px 8%; 
+  background: rgba(255,255,255,0.2); 
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  z-index:1000;
+  transition: background 0.3s;
+} 
+header:hover{
+  background: rgba(255,255,255,0.3);
+}
+.logo{
+  font-size:22px; 
+  font-weight:700;
+}
+nav a{ 
+  margin:0 12px; 
+  text-decoration:none; 
+  color: var(--dark-blue); 
+  font-weight:500; 
+  position:relative; 
+  transition: color 0.3s, transform 0.3s;
+}
+nav a:hover{ 
+  color: #fff; 
+  transform: scale(1.1);
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4); 
+} 
+nav a::after{ 
+  content:""; 
+  position:absolute;
+  width:0; 
+  height:2px; 
+  left:0; 
+  bottom:-5px;
+  background:white; 
+  transition:0.3s; 
+}
+nav a:hover::after{
+  width:100%; 
+} 
+
+/* ---------- HERO ---------- */ 
+.hero{ 
+  display:flex; 
+  justify-content:space-between;
+  align-items:center; 
+  padding:45px 8%; 
+  min-height:70vh; 
+  background: var(--gradient1); 
+  border-bottom-left-radius:50px;
+  border-bottom-right-radius:50px;
+  color:white; 
+  overflow:hidden; 
+}
+.hero-text h1{
+  font-size:22px; 
+}
+.hero-text h2{ 
+  font-size:48px;
+  margin:15px 0; 
+} 
+.hero-img{
+  position:relative;
+  animation: float 3s ease-in-out infinite; 
+}
+.hero-img img{
+  width:320px;
+  height:320px;
+  object-fit:cover; 
+  border-radius:50%;
+  border:6px solid #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover floating shadow effect for hero image */
+.hero-img img:hover {
+  transform: translate(0, -5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* ---------- SECTIONS ---------- */
+section{
+  padding:40px 8%; 
+  opacity:0; 
+  transform:translateY(40px);
+  transition:4s; 
+} 
+section.visible{ 
+  opacity:1; 
+  transform:translateY(0);
+}
+section h2{
+  font-size:32px; 
+  margin-bottom:15px; 
+  color:white; 
+} 
+
+/* ---------- BOX ---------- */
+.box{ 
+  background:var(--light-bg); 
+  padding:22px; 
+  border-radius:20px;
+  margin-bottom:15px; 
+  box-shadow:0 6px 20px rgba(0,0,0,0.2); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.box h3{ 
+  color:var(--main-orange); 
+  margin-bottom:10px; 
+} 
+.box p{
+  font-size:15.5px;
+  line-height:1.7; 
+  margin-bottom:10px; 
+}
+
+/* ---------- SKILLS ---------- */ 
+.skill{
+  margin-bottom:14px;
+} 
+.skill span{ 
+  font-weight:600; 
+} 
+.skill-bar{ 
+  height:14px;
+  background:#ddd;
+  border-radius:10px; 
+  overflow:hidden;
+}
+.skill-level{ 
+  height:100%; 
+  width:0;
+  background:var(--dark-blue);
+  transition: width 1.5s ease; 
+} 
+.skill:hover .skill-level{ 
+  width:var(--level); 
+  background:var(--main-orange); 
+} 
+
+/* ---------- FOOTER ---------- */
+footer{ 
+  text-align:center;
+  padding:25px;
+  background:rgba(255,255,255,0.15);
+}
+
+
+</style>
+</head>
+<body> 
+
+<header>
+  <div class="logo">Lokeswari Battina</div> 
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a> 
+    <a href="#education">Education</a> 
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a> 
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home"> 
+  <div class="hero-text">
+    <h1>Hello, I’m</h1>
+    <h2>Lokeswari Battina</h2> 
+    <p>Diploma Student – Artificial Intelligence & Machine Learning</p> 
+  </div> 
+  <div class="hero-img">
+  <img src="lokii.avif" alt="Portrait image">  
+  </div> 
+</section>
+
+<section id="about">
+  <h2>About</h2> 
+  <div class="box">
+    <h3>Who I Am</h3>
+    <p>I am a motivated diploma student specializing in <strong>Artificial Intelligence and Machine Learning</strong>. I am passionate about technology, problem-solving, and creating user-friendly web applications.</p>
+    <p>I continuously work on improving my technical and logical skills through projects and learning. My goal is to build innovative solutions using modern technologies.</p> 
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="box"> 
+    <h3>Frontend Developer (Intern)</h3>
+    <p><strong>ABC Company</strong> | 2023 – Present</p>
+    <ul>
+      <li>Developed responsive web pages using HTML, CSS, and JavaScript.</li>
+      <li>Improved UI design and usability.</li>
+      <li>Collaborated with team members on frontend features.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="box">
+    <h3>Diploma in AI & ML</h3> 
+    <p><strong>AANM&VVRSR Polytechnic, Gudlavalleru</strong></p> 
+    <p>2023 – 2026</p> 
+    <p>Focused on artificial intelligence concepts, programming fundamentals, and data analysis.</p>
+  </div> 
+</section> 
+
+<section id="skills">
+  <h2>Skills</h2> 
+  <div class="box">
+    <div class="skill" style="--level:90%;">
+      <span>HTML & CSS</span>
+      <div class="skill-bar">
+        <div class="skill-level"></div>
+      </div> 
+    </div>
+    <div class="skill" style="--level:75%;">
+      <span>JavaScript</span>
+      <div class="skill-bar">
+        <div class="skill-level"></div>
+      </div>
+    </div> 
+    <div class="skill" style="--level:70%;">
+      <span>Prolog</span>
+      <div class="skill-bar">
+        <div class="skill-level"></div>
+      </div> 
+    </div>
+    <div class="skill" style="--level:80%;">
+      <span>Data Analysis</span>
+      <div class="skill-bar">
+        <div class="skill-level"></div>
+      </div>
+    </div>
+    <div class="skill" style="--level:85%;"> 
+      <span>Logical Thinking</span> 
+      <div class="skill-bar">
+        <div class="skill-level"></div>
+      </div>
+    </div>
+  </div> 
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="box">
+    <h3>Portfolio Website</h3> 
+    <p>Personal website showcasing skills, education, and projects with modern UI design.</p>
+  </div> 
+  <div class="box"> 
+    <h3>File Management System</h3>
+    <p>A system designed to organize and manage files efficiently using logical structure.</p>
+  </div> 
+  <div class="box">
+    <h3>Landing Page Design</h3>
+    <p>Responsive landing page with modern layout and visual effects.</p>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div class="box"> 
+    <p>• Frontend Development Certification</p> 
+    <p>• UI/UX Design Certification</p>
+    <p>• Introduction to Artificial Intelligence</p>
+  </div>
+</section> 
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="box"> 
+    <p>Feel free to contact me for learning opportunities or collaboration.</p>
+    <p><strong>Email:</strong> battinalokeswari@gmail.com</p> 
+    <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+  </div> 
+</section> 
+
+<footer>
+  © 2025 Lokeswari Battina
+</footer>
+
+<script>
+// Section scroll animation
+window.addEventListener('scroll', () => { 
+  document.querySelectorAll('section').forEach(sec => {
+    if(sec.getBoundingClientRect().top < window.innerHeight/1.2){
+      sec.classList.add('visible');
+    }
+  });
+});
+
+// Floating shadow effect for boxes
+document.querySelectorAll('.box').forEach(box => {
+  box.addEventListener('mousemove', e => {
+    const rect = box.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const offsetX = (x / rect.width - 0.5) * 20; // -10px to +10px
+    const offsetY = (y / rect.height - 0.5) * 20;
+    box.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+    box.style.boxShadow = `${-offsetX}px ${-offsetY}px 30px rgba(0,0,0,0.3)`;
+  });
+  box.addEventListener('mouseleave', () => {
+    box.style.transform = `translate(0,0)`;
+    box.style.boxShadow = `0 6px 20px rgba(0,0,0,0.2)`;
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team Portfolio</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f70098f6, #ab8d9f);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin: 30px 0;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background: rgb(245, 245, 245);
+    color: #000000;
+    width: 250px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(227, 94, 245, 0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #311d31;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background: #2575fc;
+}
+:root{
+  --main-orange: #da61ff; 
+  --dark-blue: #5d0b2d; 
+  --light-bg: rgba(255,255,255,0.9);
+  --gradient1: linear-gradient(135deg, #ff61d0 0%, #de8bff 100%);
+  --gradient2: linear-gradient(135deg, #ff8bcf 0%, #a5d6ff 100%);
+} 
+*{ 
+  margin:0;
+  padding:0; 
+  box-sizing:border-box; 
+  font-family: 'Segoe UI', sans-serif;
+}
+html{ 
+  scroll-behavior:smooth;
+}
+body{ 
+  background: var(--main-orange);
+  color: var(--dark-blue); 
+  overflow-x: hidden; 
+} 
+
+/* ---------- HEADER ---------- */
+header{
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center;
+  padding:15px 8%; 
+  background: rgba(255,255,255,0.2); 
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  z-index:1000;
+  transition: background 0.3s;
+} 
+header:hover{
+  background: rgba(255,255,255,0.3);
+}
+.logo{
+  font-size:22px; 
+  font-weight:700;
+}
+nav a{ 
+  margin:0 12px; 
+  text-decoration:none; 
+  color: var(--dark-blue); 
+  font-weight:500; 
+  position:relative; 
+  transition: color 0.3s, transform 0.3s;
+}
+nav a:hover{ 
+  color: #fff; 
+  transform: scale(1.1);
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4); 
+} 
+nav a::after{ 
+  content:""; 
+  position:absolute;
+  width:0; 
+  height:2px; 
+  left:0; 
+  bottom:-5px;
+  background:white; 
+  transition:0.3s; 
+}
+nav a:hover::after{
+  width:100%; 
+} 
+
+/* ---------- HERO ---------- */ 
+.hero{ 
+  display:flex; 
+  justify-content:space-between;
+  align-items:center; 
+  padding:45px 8%; 
+  min-height:70vh; 
+  background: var(--gradient1); 
+  border-bottom-left-radius:50px;
+  border-bottom-right-radius:50px;
+  color:white; 
+  overflow:hidden; 
+}
+.hero-text h1{
+  font-size:22px; 
+}
+.hero-text h2{ 
+  font-size:48px;
+  margin:15px 0;
+}
+.hero-img{
+  position:relative;
+  animation: float 3s ease-in-out infinite; 
+}
+.hero-img img{
+  width:320px;
+  height:320px;
+  object-fit:cover; 
+  border-radius:50%;
+  border:6px solid #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover floating shadow effect for hero image */
+.hero-img img:hover {
+  transform: translate(0, -5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* ---------- SECTIONS ---------- */
+section{
+  padding:40px 8%; 
+  opacity:0; 
+  transform:translateY(40px);
+  transition:1s; 
+} 
+section.visible{ 
+  opacity:1; 
+  transform:translateY(0);
+}
+section h2{
+  font-size:32px; 
+  margin-bottom:15px; 
+  color:white; 
+} 
+
+/* ---------- BOX ---------- */
+.box{ 
+  background:var(--light-bg); 
+  padding:22px; 
+  border-radius:20px;
+  margin-bottom:15px; 
+  box-shadow:0 6px 20px rgba(0,0,0,0.2); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.box h3{ 
+  color:var(--main-orange); 
+  margin-bottom:10px; 
+} 
+.box p{
+  font-size:15.5px;
+  line-height:1.7; 
+  margin-bottom:10px; 
+}
+
+/* ---------- SKILLS ---------- */ 
+.skill{
+  margin-bottom:14px;
+} 
+.skill span{ 
+  font-weight:600; 
+} 
+.skill-bar{ 
+  height:14px;
+  background:#ddd;
+  border-radius:10px; 
+  overflow:hidden;
+}
+.skill-level{ 
+  height:100%; 
+  width:0;
+  background:var(--dark-blue);
+  transition: width 1.5s ease; 
+} 
+.skill:hover .skill-level{ 
+  width:var(--level); 
+  background:var(--main-orange); 
+} 
+
+/* ---------- FOOTER ---------- */
+footer{ 
+  text-align:center;
+  padding:25px;
+  background:rgba(255,255,255,0.15);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #5e545c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Meeting Management Team Portfolios</h1>
+
+<div class="team-container">
+    <div class="card">
+        <img src="hema.avif" alt="hema">
+        <h2>Akula Hema Priya</h2>
+        <p>Diploma in Computer Engineering</p>
+        <p>A.A.N.M & V.V.R.S.R Polytechnic college</p>
+        <a href="hema.html" class="btn" target="_parent">View Portfolio</a>
+    
+    </div>
+
+    <div class="card">
+        <img src="lokii.avif" alt="lokii">
+        <h2>Battina Lokeswari</h2>
+          <p>Diploma in AI&ML</p>
+        <p>A.A.N.M & V.V.R.S.R Polytechnic college</p>
+        <a href="lokii.html" class="btn" target="_parent">View Portfolio</a>
+    </div>
+
+    <div class="card">
+        <img src="work.webp" alt="suneela">
+        <h2>Gummadi Suneela</h2>
+          <p>Diploma in AI&ML</p>
+        <p>A.A.N.M & V.V.R.S.R Polytechnic college</p>
+        <a href="suneela.html" class="btn" target="_parent">View Portfolio</a>
+    </div>
+
+    <div class="card">
+        <img src="asini.jpg" alt="asini">
+        <h2>Botla Asini</h2>
+          <p>Diploma in AI&ML</p>
+        <p>A.A.N.M & V.V.R.S.R Polytechnic college</p>
+        <a href="asini.html" class="btn" target="_parent">View Portfolio</a>
+    </div>
+</div>
+<footer>
+  © 2025 Akula Hema Priya . All Rights Are Resrved.
+</footer>
+</body>
+</html>
